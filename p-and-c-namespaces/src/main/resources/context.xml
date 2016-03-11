@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="someLocale" class="java.util.Locale" factory-method="getDefault" />
+<!-- 	<bean id="someBean" class="pl.hubert.springtutorial.SomeBean"> -->
+<!-- 		<property name="user" ref="someUser"></property> -->
+<!-- 		<property name="stringValue" value="some string value"></property> -->
+<!-- 		<property name="intValue" value="100"></property> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="someUser" class="pl.hubert.springtutorial.User"> -->
+<!-- 		<constructor-arg index="0" value="Hubert"></constructor-arg> -->
+<!-- 		<constructor-arg index="1" value="21"></constructor-arg> -->
+<!-- 		<constructor-arg index="2" ref="someLocale"></constructor-arg> -->
+<!-- 	</bean> -->
+
+	<!-- P and C namespaces -->
+<!-- 	<bean id="someUser2" class="pl.hubert.springtutorial.User" c:name="Janek" -->
+<!-- 		c:age="12" c:locale-ref="someLocale" /> -->
+
+	<bean id="someUser2" class="pl.hubert.springtutorial.User" c:_0="Janek"
+		c:_1="12" c:_2-ref="someLocale" />
+		
+	<bean id="someBean2" class="pl.hubert.springtutorial.SomeBean"
+		p:stringValue="some string value" p:intValue="123" p:user-ref="someUser2" />
+</beans>
